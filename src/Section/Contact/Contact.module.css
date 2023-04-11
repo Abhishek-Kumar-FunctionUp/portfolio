@@ -1,0 +1,83 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: .1s;
+}
+
+.icons1{--i:1}
+
+.icons2{--i:2}
+
+.icons3{--i:3}
+
+.icons4{--i:4}
+
+.icons5{--i:5}
+
+.icons6{--i:6}
+
+.icons7{--i:7}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.icons i {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  background: transparent;
+  border: .2rem solid var(--main-color);
+  border-radius: 50%;
+  font-size: 5rem;
+  color: var(--main-color);
+  margin: 1.5rem 1.5rem 3rem 0;
+  transition: .5s ease;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+}
+
+.icons i:hover {
+  background: var(--main-color);
+  color: var(--second-bg-color);
+  box-shadow: 0 0 1rem var(--main-color);
+}
+
+@keyframes slideTop {
+  0%{
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+   100% {
+    transform: translateY(0);
+    opacity: 1;
+   }
+}
+
+@keyframes slideRight {
+
+  0%{
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+   100% {
+    transform: translateX(0);
+    opacity: 1;
+   }
+}
