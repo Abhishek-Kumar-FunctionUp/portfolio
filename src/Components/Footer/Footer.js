@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineArrowUp } from "react-icons/ai";
+import { BsFillArrowUpCircleFill} from "react-icons/bs";
 import style from "./Footer.module.css";
 
 export default function Footer() {
@@ -11,7 +11,7 @@ export default function Footer() {
       <div className={style.icons}>
         <a href="#home">
           <i>
-            <AiOutlineArrowUp />
+            <BsFillArrowUpCircleFill />
           </i>
         </a>
       </div>
