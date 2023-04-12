@@ -81,12 +81,12 @@ export default function Home() {
           Download CV
         </a>
       </div>
-      {/* <div className={style.imgDp}>
+      <div className={style.imgDp}>
         <img
           src={Image}
           alt="Dp"
         />
-      </div> */}
+      </div>
       <div className={style.intrest_container}>
         <div className={style.intrest_box}>
           <div className={style.intrest1}>

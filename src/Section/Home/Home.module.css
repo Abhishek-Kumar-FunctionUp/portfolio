@@ -129,9 +129,8 @@ span {
 .imgDp {
   z-index: 1;
   position: absolute;
-  height: 20vh;
-  margin-top: 38vh;
-  right:-6vw;
+  margin-top: 14vh;
+  right: 2vw;
   opacity: 0;
   animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
   animation-delay: 2s, 3s;
@@ -287,5 +286,17 @@ span {
 
     100% {
       transform: translateY(0);
+    }
+  }
+
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: scale(1);
+      opacity: 1;
     }
   }
