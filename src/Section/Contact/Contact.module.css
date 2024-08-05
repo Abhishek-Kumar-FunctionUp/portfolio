@@ -1,0 +1,176 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 0.1s;
+}
+
+.icons1 {
+  --i: 1;
+}
+
+.icons2 {
+  --i: 2;
+}
+
+.icons3 {
+  --i: 3;
+}
+
+.icons4 {
+  --i: 4;
+}
+
+.icons5 {
+  --i: 5;
+}
+
+.icons6 {
+  --i: 6;
+}
+
+.icons7 {
+  --i: 7;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.icons i {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 10rem;
+  background: transparent;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 50%;
+  font-size: 5rem;
+  color: var(--main-color);
+  margin: 1.5rem 1.5rem 3rem 0;
+  transition: 0.5s ease;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+.icons i:hover {
+  background: var(--main-color);
+  color: var(--second-bg-color);
+  box-shadow: 0 0 1rem var(--main-color);
+}
+
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.basicDetail {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+.contactForm {
+  transition: 0.5s ease;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.errorMessage {
+  font-size: 18px;
+}
+
+.input {
+  width: 430px;
+  background-color: transparent;
+  border: 2px solid #495057;
+  padding: 15px 10px;
+  color: #dee2e6;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 4px;
+}
+
+.subject {
+  width: 894px;
+  padding: 15px 10px;
+  background-color: transparent;
+  border: 2px solid #495057;
+  color: #dee2e6;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 4px;
+}
+
+.message {
+  width: 894px;
+  height: 34vh;
+  padding: 15px 10px;
+  background-color: transparent;
+  border: 2px solid #495057;
+  color: #dee2e6;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 4px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background: var(--main-color);
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 1rem var(--main-color);
+  font-size: 1.2rem;
+  color: var(--second-bg-color);
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  transition: 0.5s ease;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+  margin: 10px 0vw 4vh 0vw;
+}
+
+.btn:hover {
+  box-shadow: none;
+  cursor: pointer;
+}

@@ -1,0 +1,136 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--second-bg-color);
+  padding-left: 10rem;
+  padding-right: 10rem;
+  padding-bottom: 10rem;
+  height: 100vh;
+}
+
+.heading {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 10vh;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.project h2 {
+  margin-bottom: 5rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 2.5rem;
+  height: fit-content;
+}
+
+.box {
+  position: relative;
+  border-radius: 2rem;
+  box-shadow: 0 0 1rem var(--bg-color);
+  overflow: hidden;
+  display: flex;
+  opacity: 0;
+  animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
+  animation-delay: 2s, 3s;
+}
+
+.box img {
+  width: 100%;
+  height: 38vh;
+  transition: .5s ease;
+}
+
+.box:hover img {
+  transform: scale(1.1);
+}
+
+.box .layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  transform: translateY(100%);
+  transition: .5s ease;
+}
+
+.box:hover .layer {
+  transform: translateY(0);
+}
+
+.layer h4 {
+  font-size: 3rem;
+}
+
+.layer p {
+  font-size: 1.6rem;
+  margin: .3rem 0 1rem;
+  padding: 0vw 1vw 0vw 1vw;
+}
+
+.layer a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  background: var(--text-color);
+  border-radius: 50%;
+}
+
+.logo {
+  font-size: 2rem;
+  color: var(--second-bg-color);
+}
+
+@keyframes floatImage {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-24px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTop {
+  0%{
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+   100% {
+    transform: translateY(0);
+    opacity: 1;
+   }
+}
