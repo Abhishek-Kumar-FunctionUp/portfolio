@@ -23,7 +23,7 @@
   display: grid;
   justify-content: center;
   align-items: center;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
@@ -37,7 +37,7 @@
   border-top: 0.2rem solid var(--main-color);
   border-bottom: 0.2rem solid var(--main-color);
   width: 15vw;
-  height: 30vh;
+  height: 230px;
   transition: 0.5s ease;
   opacity: 0;
   animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
@@ -55,7 +55,7 @@
 }
 
 .iconImg {
-  width: 4.5vw;
+  width: 85px;
 }
 
 .box h3 {

@@ -37,7 +37,7 @@
 .content p {
   font-size: 16px;
   font-family: Candara;
-  line-height: 3vh;
+  line-height: 4vh;
   width: 40vw;
   margin: 2rem 0 2rem;
   opacity: 0;
@@ -47,7 +47,7 @@
 li {
   font-size: 15px;
   font-family: Lucida Handwriting;
-  line-height: 3vh;
+  line-height: 4vh;
   opacity: 0;
   animation: slideBottom 1s ease forwards;
 }

@@ -8,7 +8,7 @@ import {
   BsLinkedin,
   BsFillPenFill,
   BsCodeSlash,
-  BsMusicNoteList,
+  BsMusicNoteList
 } from "react-icons/bs";
 import { FaGuitar } from "react-icons/fa";
 import Typed from "typed.js";
@@ -23,7 +23,7 @@ export default function Home() {
       typeSpeed: 100,
       backSpeed: 100,
       backDelay: 1000,
-      loop: true,
+      loop: true
     });
   });
 
@@ -36,12 +36,12 @@ export default function Home() {
           And I'm a <span ref={el}>Frontend Developer</span>
         </h3>
         <p className={style.para}>
-          I am very energetic and have a skillful command on HTML, CSS, C, C++,
-          JAVA, JAVASCRIPT, REACT JS, REDUX, MATERIAL UI, ANTD, BOOTSTRAP and
-          many more. I have done some projects based on my skills. I want to
-          start my Professional carrier in IT field as I have a keen interest on
-          exploring technology and want to solve some real life problem with the
-          help of my tech skills.
+          Hello! I'm a passionate and dynamic developer with a strong command of
+          technologies like HTML, CSS, JavaScript, TypeScript, C, C++, React.js,
+          Next.js, Redux, Recoil, and more. I thrive on creating innovative
+          solutions and have worked on various projects that showcase my skills.
+          With a deep interest in technology and problem-solving, I aim to use
+          my expertise to tackle real-world challenges and make an impact.
         </p>
         <div className={style.socialMedia}>
           <a

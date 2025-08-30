@@ -44,7 +44,7 @@ span {
 .homeContent p {
   font-size: 15px;
   font-family: Candara;
-  line-height: 3vh;
+  line-height: 4vh;
   width: 40vw;
   opacity: 0;
   animation: slidLeft 1s ease forwards;
