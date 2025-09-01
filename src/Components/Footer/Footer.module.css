@@ -29,3 +29,24 @@
   font-size: 2.4rem;
   color: var(--second-bg-color);
 }
+
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.7rem 2%;
+    gap: 0.5rem;
+  }
+  .text {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+    text-align: center;
+  }
+  .icons a {
+    padding: 0.4rem;
+    margin: 0 0.2rem;
+  }
+  .icons a i {
+    font-size: 1.2rem;
+  }
+}

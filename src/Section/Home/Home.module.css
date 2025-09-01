@@ -143,10 +143,15 @@ span {
   z-index: 1;
   position: absolute;
   margin-top: 14vh;
-  right: 2vw;
+  right: 1vw;
   opacity: 0;
   animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
   animation-delay: 2s, 3s;
+}
+
+.imgDp img {
+  height: 432px;
+  width: 432px;
 }
 
 @keyframes intrestRotate {
@@ -315,5 +320,147 @@ span {
   100% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .home {
+    padding: 1.5rem 2vw 2rem 2vw;
+    height: auto;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  .homeContent {
+    margin-right: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .homeContent h1 {
+    font-size: 2.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .homeContent h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+  }
+  .homeContent p {
+    width: 90vw;
+    font-size: 1.2rem;
+    margin: 1rem auto;
+    text-align: center;
+    padding: 0 1rem;
+    line-height: 1.7;
+  }
+  .socialMedia {
+    justify-content: center;
+    margin-bottom: 1.2rem;
+  }
+  .socialMedia a {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1rem;
+    margin: 0.7rem 0.7rem 1.2rem 0;
+  }
+  .btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    margin: 10px auto 2vh auto;
+    display: block;
+    width: 90vw;
+    max-width: 220px;
+  }
+  .intrest_container {
+  display: none;
+  }
+  .imgDp {
+    display: block;
+    position: static;
+    margin: 0 auto 1.2rem auto;
+    width: 60vw;
+    max-width: 220px;
+    opacity: 1;
+    z-index: 2;
+  }
+  .imgDp img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+  .home {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+@media (max-width: 600px) {
+  .home {
+    padding: 1rem 1vw 1rem 1vw;
+    height: auto;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  .homeContent h1 {
+    font-size: 1.3rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+  .homeContent h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .homeContent p {
+    width: 95vw;
+    font-size: 0.9rem;
+    margin: 0.7rem auto;
+    text-align: center;
+    padding: 0 0.5rem;
+    line-height: 1.7;
+  }
+  .socialMedia {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .socialMedia a {
+    width: 1.7rem;
+    height: 1.7rem;
+    font-size: 0.8rem;
+    margin: 0.4rem 0.4rem 0.7rem 0;
+  }
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    margin: 6px auto 1vh auto;
+    display: block;
+    width: 95vw;
+    max-width: 160px;
+  }
+  .intrest_container {
+    display: none;
+  }
+  .imgDp {
+    display: block;
+    position: static;
+    margin: 0 auto 1rem auto;
+    width: 80vw;
+    max-width: 140px;
+    opacity: 1;
+    z-index: 2;
+  }
+  .imgDp img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  }
+  .home {
+display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
   }
 }

@@ -24,7 +24,7 @@
 
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   align-items: center;
   gap: 2.5rem;
   height: fit-content;
@@ -43,7 +43,7 @@
 
 .box img {
   width: 100%;
-  height: 38vh;
+  height: 30vh;
   transition: .5s ease;
 }
 
@@ -76,6 +76,7 @@
 }
 
 .layer p {
+  font-family: 'Candara';
   font-size: 1.6rem;
   margin: .3rem 0 1rem;
   padding: 0vw 1vw 0vw 1vw;
@@ -132,4 +133,74 @@
     transform: translateY(0);
     opacity: 1;
    }
+}
+
+@media (max-width: 900px) {
+  .project {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 4rem;
+  }
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+  .box img {
+    height: 24vh;
+  }
+  .layer h4 {
+    font-size: 2rem;
+  }
+  .layer p {
+    font-size: 1.1rem;
+    padding: 0vw 2vw 0vw 2vw;
+  }
+  .layer a {
+    width: 3rem;
+    height: 3rem;
+  }
+  .heading {
+    margin-top: 6rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 1s;
+  }
+}
+
+@media (max-width: 600px) {
+  .project {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    height: 100vh;
+  }
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.7rem;
+  }
+  .box img {
+    height: 14vh;
+  }
+  .heading {
+    font-size: 1.2rem;
+    margin-top: 5rem;
+    margin-bottom: 0.7rem;
+    text-align: center;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 1s;
+  }
+  .layer h4 {
+    font-size: 1.1rem;
+  }
+  .layer p {
+    font-size: 0.8rem;
+    padding: 0vw 3vw 0vw 3vw;
+  }
+  .layer a {
+    width: 2rem;
+    height: 2rem;
+  }
 }

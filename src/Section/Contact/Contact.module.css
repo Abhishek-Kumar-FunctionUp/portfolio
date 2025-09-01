@@ -174,3 +174,113 @@
   box-shadow: none;
   cursor: pointer;
 }
+
+@media (max-width: 900px) {
+  .contact {
+    padding: 2rem 0.5rem 2rem 0.5rem;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  .icons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .icons i {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.7rem;
+    margin: 0.7rem 0.7rem 1.2rem 0;
+  }
+  .input,
+  .subject,
+  .message {
+    width: 90vw;
+    max-width: 500px;
+    font-size: 1rem;
+    padding: 10px 8px;
+    margin: 0 auto 0.7rem auto;
+    box-sizing: border-box;
+  }
+  .message {
+    height: 14vh;
+  }
+  .btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    margin: 10px auto 2vh auto;
+    display: block;
+    width: 90vw;
+    max-width: 220px;
+  }
+  .errorMessage {
+    font-size: 1rem;
+    text-align: left;
+    margin-left: 0.5rem;
+  }
+  .basicDetail {
+    flex-direction: column;
+    gap: 0.7rem;
+    width: 100%;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 1.2rem 0.2rem 1.2rem 0.2rem;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  .icons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 1.2rem;
+  }
+  .icons i {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    margin: 0.4rem 0.4rem 0.8rem 0;
+  }
+  .heading {
+    font-size: 1.2rem;
+    margin-bottom: 0.7rem;
+  }
+  .input,
+  .subject,
+  .message {
+    width: 98vw;
+    max-width: 350px;
+    font-size: 0.9rem;
+    padding: 7px 4px;
+    margin: 0 auto 0.5rem auto;
+    box-sizing: border-box;
+  }
+  .message {
+    height: 8vh;
+  }
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    margin: 6px auto 1vh auto;
+    display: block;
+    width: 98vw;
+    max-width: 160px;
+  }
+  .errorMessage {
+    font-size: 0.8rem;
+    text-align: left;
+    margin-left: 0.3rem;
+  }
+  .basicDetail {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    align-items: stretch;
+  }
+}

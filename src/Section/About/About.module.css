@@ -20,7 +20,7 @@
 
 .content h3 {
   font-size: 18px;
-  font-family: Lucida Handwriting;
+  font-family: 'Segoe Script', 'Lucida Handwriting', cursive;
   margin-top: -1rem;
   margin-bottom: -0.7rem;
   animation: slideRight 1s ease forwards;
@@ -46,7 +46,7 @@
 
 li {
   font-size: 15px;
-  font-family: Lucida Handwriting;
+  font-family: 'Segoe Script', 'Lucida Handwriting', cursive;
   line-height: 4vh;
   opacity: 0;
   animation: slideBottom 1s ease forwards;
@@ -123,5 +123,159 @@ li {
   100% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .about {
+    flex-direction: column;
+    gap: 3rem;
+    height: 100vh;
+    min-height: 100vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 5rem;
+    box-sizing: border-box;
+  }
+
+  .img {
+    width: 60vw;
+    max-width: 350px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 2rem auto;
+    border-bottom: 1px solid var(--main-color);
+  }
+
+  .img img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .heading {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: 'Segoe UI', 'Candara', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .content h3 {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-family: 'Segoe Script', 'Lucida Handwriting', cursive;
+    font-weight: 500;
+    color: var(--main-color);
+  }
+
+  .content p {
+    width: 90vw;
+    font-size: 1.05rem;
+    margin: 1rem auto;
+    text-align: center;
+    padding: 0 0.5rem;
+    font-family: 'Candara', 'Segoe UI', Arial, sans-serif;
+    color: var(--text-color);
+    line-height: 1.7;
+  }
+
+  ul {
+    padding-left: 0;
+    text-align: center;
+    list-style: none;
+  }
+
+  li {
+    font-size: 1.2rem;
+    line-height: 2.5vh;
+    text-align: center;
+    font-family: 'Segoe Script', 'Lucida Handwriting', cursive;
+    color: var(--main-color);
+  }
+}
+
+@media (max-width: 600px) {
+  .about {
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100vh;
+    min-height: 100vh;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 5rem;
+    box-sizing: border-box;
+  }
+
+  .img {
+    width: 90vw;
+    max-width: 250px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem auto;
+    border-bottom: 1px solid var(--main-color);
+  }
+
+  .img img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    object-fit: contain;
+    display: block;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .heading {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-family: 'Segoe UI', 'Candara', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .content h3 {
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    text-align: center;
+    font-family: 'Segoe Script', 'Lucida Handwriting', cursive;
+    font-weight: 500;
+    color: var(--main-color);
+  }
+
+  .content p {
+    width: 95vw;
+    font-size: 0.9rem;
+    margin: 0.5rem auto;
+    text-align: center;
+    padding: 0 0.5rem;
+    font-family: 'Candara', 'Segoe UI', Arial, sans-serif;
+    color: var(--text-color);
+    line-height: 1.7;
+  }
+
+  ul {
+    padding-left: 0;
+    text-align: center;
+    list-style: none;
+  }
+
+  li {
+    font-size: 0.9rem;
+    line-height: 2.2vh;
+    text-align: center;
+    font-family: 'Segoe Script', 'Lucida Handwriting', cursive;
+    color: var(--main-color);
   }
 }

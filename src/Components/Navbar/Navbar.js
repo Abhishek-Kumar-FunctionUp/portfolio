@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./Navbar.module.css";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className={style.header}>
       <a href="#home" className={style.logo}>
@@ -24,6 +27,49 @@ export default function Navbar() {
           Contact
         </a>
       </nav>
+
+      <RxHamburgerMenu
+        className={style.hamburger}
+        onClick={() => setMenuOpen(true)}
+        aria-label="Open menu"
+      />
+
+      {menuOpen && (
+        <div
+          className={style.sidebarOverlay}
+          onClick={() => setMenuOpen(false)}
+        >
+          <div
+            className={style.sidebarMenu}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className={style.closeBtn}
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              &times;
+            </button>
+            <nav className={style.sidebarNavbar}>
+              <a href="#home" onClick={() => setMenuOpen(false)}>
+                Home
+              </a>
+              <a href="#about" onClick={() => setMenuOpen(false)}>
+                About
+              </a>
+              <a href="#skills" onClick={() => setMenuOpen(false)}>
+                Skills
+              </a>
+              <a href="#projects" onClick={() => setMenuOpen(false)}>
+                Projects
+              </a>
+              <a href="#contact" onClick={() => setMenuOpen(false)}>
+                Contact
+              </a>
+            </nav>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

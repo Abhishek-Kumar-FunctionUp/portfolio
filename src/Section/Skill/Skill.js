@@ -30,7 +30,7 @@ export default function Skill() {
             <h3>
               {skill.heading}
             </h3>
-            <p>
+            <p className={style.detail}>
               {skill.detail}
             </p>
           </div>

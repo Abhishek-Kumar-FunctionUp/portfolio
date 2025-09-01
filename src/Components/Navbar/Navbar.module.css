@@ -83,3 +83,123 @@ a {
     opacity: 1;
   }
 }
+
+@media (max-width: 900px) {
+  .navbar {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0.5rem 1rem;
+    z-index: 101;
+  }
+  .hamburgerIcon {
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    position: relative;
+  }
+  .hamburgerIcon::before,
+  .hamburgerIcon::after,
+  .hamburgerIcon {
+    content: "";
+    display: block;
+    background: var(--text-color);
+    height: 0.25rem;
+    border-radius: 2px;
+    margin: 0.3rem 0;
+    transition: 0.3s;
+  }
+  .hamburgerIcon::before {
+    width: 2rem;
+  }
+  .hamburgerIcon {
+    width: 2rem;
+  }
+  .hamburgerIcon::after {
+    width: 2rem;
+  }
+  .sidebarOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
+    z-index: 200;
+    transition: background 0.3s;
+  }
+  .sidebarMenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70vw;
+    max-width: 340px;
+    height: 100vh;
+    background: var(--bg-color);
+    box-shadow: -4px 0 32px rgba(0,0,0,0.18);
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1.5rem 2rem 1.5rem;
+    animation: sidebarSlideIn 0.4s cubic-bezier(0.4,0,0.2,1) forwards;
+  }
+  @keyframes sidebarSlideIn {
+    0% { right: -70vw; opacity: 0; }
+    100% { right: 0; opacity: 1; }
+  }
+  .closeBtn {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: var(--main-color);
+    cursor: pointer;
+    z-index: 201;
+    transition: color 0.2s;
+  }
+  .closeBtn:hover {
+    color: var(--text-color);
+  }
+  .sidebarNavbar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3.5rem;
+    align-items: center;
+    width: 100%;
+  }
+  .sidebarNavbar a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--main-color);
+    text-decoration: none;
+    padding: 0.7rem 0;
+    border-radius: 1rem;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(90deg, var(--main-color) 0%, var(--bg-color) 100%);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s;
+  }
+  .sidebarNavbar a:hover {
+    background: var(--main-color);
+    color: var(--second-bg-color);
+  }
+}
+@media (min-width: 901px) {
+  .hamburger {
+    display: none;
+  }
+  .sidebarOverlay {
+    display: none;
+  }
+}

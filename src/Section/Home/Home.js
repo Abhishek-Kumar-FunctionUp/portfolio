@@ -1,14 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import style from "./Home.module.css";
 import Resume from "../../Fixture/Resume_Abhishek.pdf";
-import Image from "../../Fixture/Home.png";
+import Image from "../../Fixture/Home.svg";
 import {
   BsFacebook,
   BsInstagram,
   BsLinkedin,
   BsFillPenFill,
   BsCodeSlash,
-  BsMusicNoteList
+  BsMusicNoteList,
 } from "react-icons/bs";
 import { FaGuitar } from "react-icons/fa";
 import Typed from "typed.js";
@@ -23,7 +23,7 @@ export default function Home() {
       typeSpeed: 100,
       backSpeed: 100,
       backDelay: 1000,
-      loop: true
+      loop: true,
     });
   });
 
@@ -83,7 +83,7 @@ export default function Home() {
         </a>
       </div>
       <div className={style.imgDp}>
-        <img src={Image} alt="Dp" />
+        <img src={Image} />
       </div>
       <div className={style.intrest_container}>
         <div className={style.intrest_box}>
