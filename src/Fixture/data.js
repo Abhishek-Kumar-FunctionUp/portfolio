@@ -170,16 +170,14 @@ export const educationData = [
     institution: "GLA College",
     duration: "2018 - 2021",
     location: "Jharkhand, India",
-    grade: "CGPA: 8.5/10",
+    grade: "Percentage: 70%",
     description: [
       "Specialized in Software Engineering and Web Development",
       "Completed coursework in Data Structures, Algorithms, and Database Management",
-      "Participated in coding competitions and hackathons",
-      "Final year project on Full Stack Web Application Development",
+      "Final year project on Web Application Development",
     ],
     achievements: [
-      "Dean's List for Academic Excellence (2021, 2022)",
-      "Winner of Inter-College Coding Competition",
+      "Dean's List for Academic Excellence (2021)",
       "Active member of Programming Club",
     ],
   },
@@ -189,7 +187,7 @@ export const educationData = [
     institution: "M.D.N.G.G.P.S",
     duration: "2016 - 2018",
     location: "Jharkhand, India",
-    grade: "Percentage: 92.5%",
+    grade: "Percentage: 62%",
     description: [
       "Major subjects: Physics, Chemistry, Mathematics, Computer Science",
       "Strong foundation in analytical and problem-solving skills",
@@ -197,9 +195,8 @@ export const educationData = [
       "Leadership role as Class Representative",
     ],
     achievements: [
-      "School Topper in Computer Science",
-      "Merit Certificate for Academic Performance",
-      "Best Student Award for Leadership",
+      "First Place Winner - District Level Science Exhibition",
+      "Academic Excellence Merit Certificate",
     ],
   },
   {
@@ -216,8 +213,7 @@ export const educationData = [
       "Foundation for technical education and career development",
     ],
     achievements: [
-      "School Merit List for two consecutive years",
-      "Certificate of Excellence in Mathematics",
+      "First Place Winner - District Level Science Exhibition",
       "Active member of Science Club",
     ],
   },
@@ -231,7 +227,7 @@ export const experiences = [
     duration: "Nov. 2024 - Present",
     location: "Vadodara, Gujarat, India",
     description: [
-      "Developed responsive web applications using React.js and modern CSS frameworks",
+      "Developed responsive web applications using Next.js and tailwind CSS",
       "Collaborated with cross-functional teams to deliver high-quality user interfaces",
       "Optimized application performance and improved user experience",
       "Implemented state management using Redux and Context API",
@@ -244,7 +240,7 @@ export const experiences = [
     duration: "Sept. 2023 - Sept. 2024",
     location: "Nadiad, Gujarat, India",
     description: [
-      "Built interactive websites using HTML5, CSS3, and JavaScript",
+      "Built interactive websites using React JS and modern CSS frameworks",
       "Worked on mobile-first responsive design principles",
       "Assisted in client projects and requirement gathering",
       "Gained experience in version control using Git and GitHub",
@@ -257,10 +253,10 @@ export const experiences = [
     duration: "Nov. 2022 - Aug. 2023",
     location: "Remote",
     description: [
-      "Developed end-to-end web solutions for small businesses",
-      "Created custom WordPress themes and plugins",
-      "Implemented e-commerce solutions using modern frameworks",
-      "Managed client relationships and project timelines",
+      "Built multiple projects using HTML5, CSS3, JavaScript, and React.js under mentor guidance",
+      "Gained hands-on experience with version control systems (Git/GitHub) and collaborative development",
+      "Participated in code reviews and learned industry best practices for clean, maintainable code",
+      "Completed assignments on data structures, algorithms, and problem-solving techniques",
     ],
   },
 ];
