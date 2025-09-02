@@ -14,8 +14,13 @@
   font-size: 3rem;
   margin-top: 10vh;
   opacity: 0;
-  animation: slideTop 1s ease forwards;
-  animation-delay: 1s;
+  transform: translateY(-100px);
+  transition: all 1s ease;
+}
+
+.heading.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project h2 {
@@ -37,8 +42,17 @@
   overflow: hidden;
   display: flex;
   opacity: 0;
-  animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
-  animation-delay: 2s, 3s;
+  transform: scale(0);
+  transition: all 1s ease;
+}
+
+.box.animateBox {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.box.animateBox:hover {
+  animation: floatImage 4s ease-in-out infinite;
 }
 
 .box img {
@@ -76,7 +90,7 @@
 }
 
 .layer p {
-  font-family: 'Candara';
+  font-family: 'Mosk', sans-serif;
   font-size: 1.6rem;
   margin: .3rem 0 1rem;
   padding: 0vw 1vw 0vw 1vw;
@@ -152,7 +166,7 @@
     font-size: 2rem;
   }
   .layer p {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     padding: 0vw 2vw 0vw 2vw;
   }
   .layer a {
@@ -160,6 +174,7 @@
     height: 3rem;
   }
   .heading {
+    font-size: 2.2rem;
     margin-top: 6rem;
     margin-bottom: 1.2rem;
     text-align: center;
@@ -174,18 +189,18 @@
     padding-left: 2rem;
     padding-right: 2rem;
     padding-bottom: 2rem;
-    height: 100vh;
+    height: min-content;
   }
   .container {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.7rem;
   }
   .box img {
-    height: 14vh;
+    height: 20vh;
   }
   .heading {
-    font-size: 1.2rem;
-    margin-top: 5rem;
+    font-size: 1.7rem;
+    margin-top: 8rem;
     margin-bottom: 0.7rem;
     text-align: center;
     opacity: 0;
@@ -193,14 +208,18 @@
     animation-delay: 1s;
   }
   .layer h4 {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
   .layer p {
-    font-size: 0.8rem;
+    font-size: 1rem;
     padding: 0vw 3vw 0vw 3vw;
   }
   .layer a {
     width: 2rem;
     height: 2rem;
+  }
+
+  .layer .logo{
+    font-size: 1.3rem;
   }
 }

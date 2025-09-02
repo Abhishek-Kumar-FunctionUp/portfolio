@@ -11,8 +11,13 @@
   font-size: 3rem;
   margin-top: 10vh;
   opacity: 0;
-  animation: slideTop 1s ease forwards;
-  animation-delay: 1s;
+  transform: translateY(100px);
+  transition: all 1s ease;
+}
+
+.heading.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .skill h2 {
@@ -20,7 +25,7 @@
 }
 
 .detail{
-  font-family: 'Candara';
+  font-family: 'Mosk', sans-serif;;
 }
 
 .container {
@@ -42,10 +47,18 @@
   border-bottom: 0.2rem solid var(--main-color);
   width: 15vw;
   height: 230px;
-  transition: 0.5s ease;
+  transition: all 0.5s ease;
   opacity: 0;
-  animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
-  animation-delay: 2s, 3s;
+  transform: scale(0);
+}
+
+.box.animateBox {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.box.animateBox:hover {
+  animation: floatImage 4s ease-in-out infinite;
 }
 
 .box:hover {
@@ -67,7 +80,7 @@
 }
 
 .box p {
-  font-size: 13px;
+  font-size: 1.3rem;
   margin: 1rem 0 3rem;
   line-height: 2.5vh;
 }
@@ -119,7 +132,7 @@
     width: 28vw;
     min-width: 140px;
     max-width: 32vw;
-    height: 180px;
+    height: 200px;
     padding: 1.2rem 0.7rem 1.5rem;
   }
   .icon {
@@ -132,11 +145,12 @@
     font-size: 2rem;
   }
   .box p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin: 0.3rem 0 1rem;
     line-height: 1.7;
   }
   .heading {
+    font-size: 2.2rem;
     margin-top: 6rem;
     margin-bottom: 1.2rem;
   }
@@ -151,8 +165,8 @@
     width: 38vw;
     min-width: 90px;
     max-width: 42vw;
-    height: 115px;
-    padding: 0.5rem 0.2rem 0.7rem;
+    height: 135px;
+    padding: 1rem 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -165,16 +179,16 @@
     width: 26px;
   }
   .box h3 {
-    font-size: 0.95rem;
+    font-size: 1.3rem;
   }
   .box p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin: 0.1rem 0 0.4rem;
     line-height: 1.7;
   }
   .heading {
-    margin-top: 5rem;
+    margin-top: 8rem;
     margin-bottom: 0.7rem;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
   }
 }

@@ -3,14 +3,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: var(--bg-color);
 }
 
 .heading {
   text-align: center;
   font-size: 2.5rem;
   opacity: 0;
-  animation: slideTop 1s ease forwards;
-  animation-delay: 0.1s;
+  transform: translateY(100px);
+  transition: all 1s ease;
+}
+
+.heading.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .icons1 {
@@ -47,6 +53,19 @@
   width: 100%;
 }
 
+.icons.animateIcons .icons1 { transition-delay: 0.1s; }
+.icons.animateIcons .icons2 { transition-delay: 0.2s; }
+.icons.animateIcons .icons3 { transition-delay: 0.3s; }
+.icons.animateIcons .icons4 { transition-delay: 0.4s; }
+.icons.animateIcons .icons5 { transition-delay: 0.5s; }
+.icons.animateIcons .icons6 { transition-delay: 0.6s; }
+.icons.animateIcons .icons7 { transition-delay: 0.7s; }
+
+.icons.animateIcons i {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .icons i {
   display: inline-flex;
   justify-content: center;
@@ -59,10 +78,9 @@
   font-size: 5rem;
   color: var(--main-color);
   margin: 1.5rem 1.5rem 3rem 0;
-  transition: 0.5s ease;
+  transition: all 0.5s ease;
   opacity: 0;
-  animation: slideRight 1s ease forwards;
-  animation-delay: calc(0.2s * var(--i));
+  transform: translateX(100px);
 }
 
 .icons i:hover {
@@ -102,9 +120,14 @@
 }
 
 .contactForm {
-  transition: 0.5s ease;
-  animation: slideTop 1s ease forwards;
-  animation-delay: 2s;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease 0.5s;
+}
+
+.contactForm.animateForm {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .inputContainer {
@@ -124,7 +147,7 @@
   border: 2px solid #495057;
   padding: 15px 10px;
   color: #dee2e6;
-  font-size: 14px;
+  font-size: 1.6rem;
   font-weight: 400;
   border-radius: 4px;
 }
@@ -135,7 +158,7 @@
   background-color: transparent;
   border: 2px solid #495057;
   color: #dee2e6;
-  font-size: 14px;
+  font-size: 1.6rem;
   font-weight: 400;
   border-radius: 4px;
 }
@@ -147,7 +170,7 @@
   background-color: transparent;
   border: 2px solid #495057;
   color: #dee2e6;
-  font-size: 14px;
+  font-size: 1.6rem;
   font-weight: 400;
   border-radius: 4px;
 }
@@ -163,11 +186,9 @@
   color: var(--second-bg-color);
   letter-spacing: 0.1rem;
   font-weight: 600;
-  transition: 0.5s ease;
-  opacity: 0;
-  animation: slideTop 1s ease forwards;
-  animation-delay: 2s;
+  transition: all 0.5s ease;
   margin: 10px 0vw 4vh 0vw;
+  opacity: 1;
 }
 
 .btn:hover {
@@ -193,12 +214,15 @@
     font-size: 1.7rem;
     margin: 0.7rem 0.7rem 1.2rem 0;
   }
+  .heading{
+    font-size: 2.2rem;
+  }
   .input,
   .subject,
   .message {
     width: 90vw;
     max-width: 500px;
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding: 10px 8px;
     margin: 0 auto 0.7rem auto;
     box-sizing: border-box;
@@ -208,14 +232,14 @@
   }
   .btn {
     padding: 0.7rem 1.5rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin: 10px auto 2vh auto;
     display: block;
     width: 90vw;
     max-width: 220px;
   }
   .errorMessage {
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: left;
     margin-left: 0.5rem;
   }
@@ -229,7 +253,6 @@
 
 @media (max-width: 600px) {
   .contact {
-    padding: 1.2rem 0.2rem 1.2rem 0.2rem;
     min-height: 100vh;
     box-sizing: border-box;
   }
@@ -248,7 +271,7 @@
     margin: 0.4rem 0.4rem 0.8rem 0;
   }
   .heading {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     margin-bottom: 0.7rem;
   }
   .input,
@@ -256,7 +279,7 @@
   .message {
     width: 98vw;
     max-width: 350px;
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     padding: 7px 4px;
     margin: 0 auto 0.5rem auto;
     box-sizing: border-box;
@@ -266,14 +289,14 @@
   }
   .btn {
     padding: 0.5rem 1rem;
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     margin: 6px auto 1vh auto;
     display: block;
     width: 98vw;
     max-width: 160px;
   }
   .errorMessage {
-    font-size: 0.8rem;
+    font-size: 1.3rem;
     text-align: left;
     margin-left: 0.3rem;
   }

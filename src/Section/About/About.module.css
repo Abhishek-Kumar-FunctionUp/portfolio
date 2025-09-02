@@ -15,41 +15,70 @@
   text-align: left;
   line-height: 1.2;
   opacity: 0;
-  animation: slideTop 1s ease forwards;
+  transform: translateY(-100px);
+  transition: all 1s ease;
+}
+
+.heading.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .content h3 {
   font-size: 18px;
-  font-family: 'Segoe Script', 'Lucida Handwriting', cursive;
   margin-top: -1rem;
   margin-bottom: -0.7rem;
-  animation: slideRight 1s ease forwards;
-  animation-delay: 0.2s;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease 0.2s;
+}
+
+.content h3.animateRight {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .img {
   border-bottom: 1px solid var(--main-color);
   opacity: 0;
-  animation: zoomIn 1s ease forwards, floatImage 4s ease-in-out infinite;
-  animation-delay: 0.1s, 3s;
+  transform: scale(0);
+  transition: all 1s ease 0.1s;
+}
+
+.img.animate {
+  opacity: 1;
+  transform: scale(1);
+  animation: floatImage 4s ease-in-out infinite 2s;
 }
 
 .content p {
-  font-size: 16px;
-  font-family: Candara;
+  font-size: 1.6rem;
+  font-family: 'Mosk', sans-serif;
   line-height: 4vh;
   width: 40vw;
   margin: 2rem 0 2rem;
   opacity: 0;
-  animation: slidLeft 1s ease forwards;
+  transform: translateX(-100px);
+  transition: all 1s ease 0.3s;
 }
 
-li {
+.content p.animateLeft {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.content li {
   font-size: 15px;
   font-family: 'Segoe Script', 'Lucida Handwriting', cursive;
   line-height: 4vh;
   opacity: 0;
-  animation: slideBottom 1s ease forwards;
+  transform: translateY(100px);
+  transition: all 1s ease;
+}
+
+.content li.animateBottom {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes floatImage {
@@ -162,13 +191,13 @@ li {
     font-size: 2.2rem;
     text-align: center;
     margin-bottom: 1rem;
-    font-family: 'Segoe UI', 'Candara', Arial, sans-serif;
+    font-family: 'Mosk', sans-serif;;
     font-weight: 700;
     letter-spacing: 1px;
   }
 
   .content h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     text-align: center;
@@ -179,22 +208,22 @@ li {
 
   .content p {
     width: 90vw;
-    font-size: 1.05rem;
+    font-size: 1.5rem;
     margin: 1rem auto;
     text-align: center;
     padding: 0 0.5rem;
-    font-family: 'Candara', 'Segoe UI', Arial, sans-serif;
+    font-family: 'Mosk', sans-serif;;
     color: var(--text-color);
     line-height: 1.7;
   }
 
-  ul {
+  .content ul {
     padding-left: 0;
     text-align: center;
     list-style: none;
   }
 
-  li {
+  .content li {
     font-size: 1.2rem;
     line-height: 2.5vh;
     text-align: center;
@@ -207,12 +236,16 @@ li {
   .about {
     flex-direction: column;
     gap: 1.5rem;
-    height: 100vh;
+    height: min-content;
     min-height: 100vh;
     padding-left: 0;
     padding-right: 0;
     padding-top: 5rem;
     box-sizing: border-box;
+  }
+
+  .content{
+    padding: 0rem 0rem 5rem 0rem;
   }
 
   .img {
@@ -222,7 +255,7 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 1rem auto;
+    margin: 2.5rem auto 1rem auto;
     border-bottom: 1px solid var(--main-color);
   }
 
@@ -236,16 +269,16 @@ li {
   }
 
   .heading {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     text-align: center;
     margin-bottom: 0.5rem;
-    font-family: 'Segoe UI', 'Candara', Arial, sans-serif;
+    font-family: 'Mosk', sans-serif;;
     font-weight: 700;
     letter-spacing: 1px;
   }
 
   .content h3 {
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin-top: 0.3rem;
     margin-bottom: 0.3rem;
     text-align: center;
@@ -255,25 +288,24 @@ li {
   }
 
   .content p {
-    width: 95vw;
-    font-size: 0.9rem;
+    font-size: 1.3rem;
     margin: 0.5rem auto;
     text-align: center;
     padding: 0 0.5rem;
-    font-family: 'Candara', 'Segoe UI', Arial, sans-serif;
+    font-family: 'Mosk', sans-serif;;
     color: var(--text-color);
     line-height: 1.7;
   }
 
-  ul {
+  .content ul {
     padding-left: 0;
     text-align: center;
     list-style: none;
   }
 
-  li {
-    font-size: 0.9rem;
-    line-height: 2.2vh;
+  .content li {
+    font-size: 1.3rem;
+    line-height: 3vh;
     text-align: center;
     font-family: 'Segoe Script', 'Lucida Handwriting', cursive;
     color: var(--main-color);

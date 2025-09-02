@@ -162,3 +162,105 @@ export const projectData = [
     projectLink: "https://resilient-speculoos-6ce727.netlify.app/",
   },
 ];
+
+export const educationData = [
+  {
+    id: 1,
+    degree: "Bachelor in Computer Application",
+    institution: "GLA College",
+    duration: "2018 - 2021",
+    location: "Jharkhand, India",
+    grade: "CGPA: 8.5/10",
+    description: [
+      "Specialized in Software Engineering and Web Development",
+      "Completed coursework in Data Structures, Algorithms, and Database Management",
+      "Participated in coding competitions and hackathons",
+      "Final year project on Full Stack Web Application Development",
+    ],
+    achievements: [
+      "Dean's List for Academic Excellence (2021, 2022)",
+      "Winner of Inter-College Coding Competition",
+      "Active member of Programming Club",
+    ],
+  },
+  {
+    id: 2,
+    degree: "Higher Secondary Certificate (Science)",
+    institution: "M.D.N.G.G.P.S",
+    duration: "2016 - 2018",
+    location: "Jharkhand, India",
+    grade: "Percentage: 92.5%",
+    description: [
+      "Major subjects: Physics, Chemistry, Mathematics, Computer Science",
+      "Strong foundation in analytical and problem-solving skills",
+      "Active participation in science exhibitions and coding events",
+      "Leadership role as Class Representative",
+    ],
+    achievements: [
+      "School Topper in Computer Science",
+      "Merit Certificate for Academic Performance",
+      "Best Student Award for Leadership",
+    ],
+  },
+  {
+    id: 3,
+    degree: "Secondary School Certificate",
+    institution: "M.D.N.G.G.P.S",
+    duration: "2014 - 2016",
+    location: "Jharkhand, India",
+    grade: "CGPA: 8.6/10",
+    description: [
+      "Well-rounded education with focus on science and mathematics",
+      "Introduction to computer programming and logical thinking",
+      "Participation in various extracurricular activities",
+      "Foundation for technical education and career development",
+    ],
+    achievements: [
+      "School Merit List for two consecutive years",
+      "Certificate of Excellence in Mathematics",
+      "Active member of Science Club",
+    ],
+  },
+];
+
+export const experiences = [
+  {
+    id: 1,
+    company: "AV Devs Solution",
+    position: "Software Engineer",
+    duration: "Nov. 2024 - Present",
+    location: "Vadodara, Gujarat, India",
+    description: [
+      "Developed responsive web applications using React.js and modern CSS frameworks",
+      "Collaborated with cross-functional teams to deliver high-quality user interfaces",
+      "Optimized application performance and improved user experience",
+      "Implemented state management using Redux and Context API",
+    ],
+  },
+  {
+    id: 2,
+    company: "Groovy Techno Web",
+    position: "Frontend Developer",
+    duration: "Sept. 2023 - Sept. 2024",
+    location: "Nadiad, Gujarat, India",
+    description: [
+      "Built interactive websites using HTML5, CSS3, and JavaScript",
+      "Worked on mobile-first responsive design principles",
+      "Assisted in client projects and requirement gathering",
+      "Gained experience in version control using Git and GitHub",
+    ],
+  },
+  {
+    id: 3,
+    company: "FunctionUp",
+    position: "Frontend Developer Trainee",
+    duration: "Nov. 2022 - Aug. 2023",
+    location: "Remote",
+    description: [
+      "Developed end-to-end web solutions for small businesses",
+      "Created custom WordPress themes and plugins",
+      "Implemented e-commerce solutions using modern frameworks",
+      "Managed client relationships and project timelines",
+    ],
+  },
+];

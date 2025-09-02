@@ -1,0 +1,290 @@
+.experience {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+  background: var(--bg-color);
+}
+
+.heading {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--text-color);
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 1s ease;
+}
+
+.heading.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heading span {
+  color: var(--main-color);
+}
+
+.experienceContainer {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.experienceContainer::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--main-color);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.experienceCard {
+  position: relative;
+  width: 50%;
+  padding: 2rem;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.experienceCard.animateCard {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.experienceCard:nth-child(1) { animation-delay: 0.2s; }
+.experienceCard:nth-child(2) { animation-delay: 0.4s; }
+.experienceCard:nth-child(3) { animation-delay: 0.6s; }
+
+.left {
+  left: -4%;
+  text-align: left;
+}
+
+.right {
+  left: 50.7%;
+  text-align: left;
+}
+
+.cardContent {
+  background: var(--second-bg-color);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.cardContent:hover {
+  border-color: var(--main-color);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.cardHeader {
+  margin-bottom: 1.5rem;
+}
+
+.position {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.companyInfo {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.company,
+.duration,
+.location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.icon {
+  color: var(--main-color);
+  font-size: 1.1rem;
+}
+
+.description {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.description li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 1.6rem;
+}
+
+.description li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--main-color);
+  font-weight: bold;
+}
+
+.timeline {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left .timeline {
+  right: -2rem;
+}
+
+.right .timeline {
+  left: -2rem;
+}
+
+.timelineNode {
+  width: 2rem;
+  height: 2rem;
+  background: linear-gradient(135deg, var(--main-color), var(--bg-color));
+  border: 5px solid var(--bg-color);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--main-color), 0 0 20px rgba(0, 123, 255, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.timelineNode::before {
+  content: '💼';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8rem;
+}
+
+.experienceCard:hover .timelineNode {
+  transform: scale(1.3) rotate(360deg);
+  box-shadow: 0 0 0 6px var(--main-color), 0 0 30px rgba(0, 123, 255, 0.5);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .experience {
+    padding: 8rem 2vw 2rem;
+  }
+  
+  .heading {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .company,
+  .duration,
+  .location {
+    font-size: 1.5rem;
+  }
+  
+  .experienceContainer::before {
+    left: 2rem;
+  }
+  
+  .experienceCard {
+    width: 90%;
+    left: 0 !important;
+    text-align: left;
+    padding-left: 4rem;
+    padding-right: 1rem;
+  }
+  
+  .timeline {
+    left: 1.25rem !important;
+  }
+  
+  .cardContent {
+    padding: 2rem;
+  }
+  
+  .position {
+    font-size: 2rem;
+  }
+  
+  .companyInfo {
+    align-items: flex-start;
+  }
+
+  .description li{
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .experience {
+    padding: 6rem 1vw 2rem;
+  }
+  
+  .heading {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .experienceCard {
+    width: 80%;
+    padding-left: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .cardContent {
+    padding: 1.5rem;
+  }
+  
+  .position {
+    font-size: 1.3rem;
+  }
+  
+  .company,
+  .duration,
+  .location {
+    font-size: 0.9rem;
+  }
+  
+  .description li {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .timelineNode {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}

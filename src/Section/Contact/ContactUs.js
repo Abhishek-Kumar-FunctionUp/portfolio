@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import style from "./Contact.module.css";
-const ContactForm = () => {
+const ContactForm = ({ isVisible }) => {
   const {
     register,
     handleSubmit,
@@ -63,7 +63,9 @@ const ContactForm = () => {
   };
 
   return (
-    <div className={style.contactForm}>
+    <div
+      className={`${style.contactForm} ${isVisible ? style.animateForm : ""}`}
+    >
       <div className="container">
         <div className="row">
           <div className="col-12 text-center">

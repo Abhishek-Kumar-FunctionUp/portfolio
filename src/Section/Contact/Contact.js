@@ -1,23 +1,29 @@
 import React from "react";
-import {
-  BsFacebook,
-  BsInstagram,
-  BsLinkedin,
-  BsGithub,
-} from "react-icons/bs";
+import { BsFacebook, BsInstagram, BsLinkedin, BsGithub } from "react-icons/bs";
 import { SiGmail, SiNetlify } from "react-icons/si";
 import style from "./Contact.module.css";
 import ContactForm from "./ContactUs";
 import { FaXTwitter } from "react-icons/fa6";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 export default function Contact() {
+  const [contactRef, isContactVisible] = useScrollAnimation(0.2);
+  const [headingRef, isHeadingVisible] = useScrollAnimation(0.3);
+  const [iconsRef, isIconsVisible] = useScrollAnimation(0.3);
+
   return (
-    <div className={style.contact} id="contact">
-      <h2 className={style.heading}>
+    <div className={style.contact} id="contact" ref={contactRef}>
+      <h2
+        className={`${style.heading} ${isHeadingVisible ? style.animate : ""}`}
+        ref={headingRef}
+      >
         Contact <span>Me!</span>
       </h2>
-      <ContactForm />
-      <div className={style.icons}>
+      <ContactForm isVisible={isContactVisible} />
+      <div
+        className={`${style.icons} ${isIconsVisible ? style.animateIcons : ""}`}
+        ref={iconsRef}
+      >
         <a href="mailto:abhi2k5u@gmail.com" target="_blank">
           <i className={style.icons1}>
             <SiGmail />

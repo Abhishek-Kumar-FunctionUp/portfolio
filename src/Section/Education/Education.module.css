@@ -1,0 +1,464 @@
+.education {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+  background: var(--second-bg-color);
+}
+
+.heading {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--text-color);
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: all 1s ease;
+}
+
+.heading.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heading span {
+  color: var(--main-color);
+}
+
+.educationContainer {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.educationContainer::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--main-color) 0%, var(--second-bg-color) 50%, var(--main-color) 100%);
+  transform: translateX(-50%);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+.educationCard {
+  position: relative;
+  width: 50%;
+  padding: 2rem;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.educationCard.animateCard {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.educationCard:nth-child(1) { animation-delay: 0.2s; }
+.educationCard:nth-child(2) { animation-delay: 0.4s; }
+.educationCard:nth-child(3) { animation-delay: 0.6s; }
+
+.left {
+  left: -4%;
+  text-align: left;
+}
+
+.right {
+  left: 50.4%;
+  text-align: left;
+}
+
+.cardContent {
+  background: var(--bg-color);
+  border-radius: 2rem;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cardContent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--main-color), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.cardContent:hover {
+  border-color: var(--main-color);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 123, 255, 0.2);
+}
+
+.cardContent:hover::before {
+  opacity: 0.1;
+}
+
+.cardHeader {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--main-color);
+  padding-bottom: 1rem;
+}
+
+.degree {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--main-color);
+  margin-bottom: 1.2rem;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.3;
+}
+
+.institutionInfo {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.institution,
+.duration,
+.location,
+.grade {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  font-weight: 600;
+  padding: 0.5rem 0;
+}
+
+.icon {
+  color: var(--main-color);
+  font-size: 1.2rem;
+  min-width: 1.2rem;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.description,
+.achievements {
+  background: var(--bg-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border-left: 4px solid var(--main-color);
+}
+
+.description h4,
+.achievements h4 {
+  color: var(--main-color);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.description h4::before {
+  content: '📚';
+  font-size: 1.1rem;
+}
+
+.achievements h4::before {
+  content: '🏆';
+  font-size: 1.1rem;
+}
+
+.description ul,
+.achievements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.description li,
+.achievements li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.description li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.achievements li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.timeline {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left .timeline {
+  right: -2rem;
+}
+
+.right .timeline {
+  left: -2rem;
+}
+
+.timelineNode {
+  width: 2rem;
+  height: 2rem;
+  background: linear-gradient(135deg, var(--main-color), var(--second-bg-color));
+  border: 5px solid var(--bg-color);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--main-color), 0 0 20px rgba(0, 123, 255, 0.3);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.timelineNode::before {
+  content: '🎓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8rem;
+}
+
+.educationCard:hover .timelineNode {
+  transform: scale(1.3) rotate(360deg);
+  box-shadow: 0 0 0 6px var(--main-color), 0 0 30px rgba(0, 123, 255, 0.5);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .education {
+    padding: 8rem 2vw 2rem;
+  }
+  
+  .heading {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .educationContainer {
+    padding: 1rem 0;
+  }
+  
+  .educationContainer::before {
+    left: 2rem;
+  }
+  
+  .educationCard {
+    width: 90%;
+    left: 0 !important;
+    text-align: left;
+    padding: 1rem 1rem 1rem 4rem;
+    margin-bottom: 3rem;
+  }
+  
+  .left,
+  .right {
+    left: 0 !important;
+  }
+  
+  .timeline {
+    left: 1rem !important;
+    right: auto !important;
+  }
+  
+  .cardContent {
+    padding: 1.8rem;
+    border-radius: 1.5rem;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .cardHeader {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+  
+  .degree {
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+  
+  .institutionInfo {
+    gap: 0.6rem;
+  }
+  
+  .institution,
+  .duration,
+  .location,
+  .grade {
+    font-size: 1.5rem;
+    padding: 0.3rem 0;
+  }
+  
+  .cardBody {
+    gap: 1.2rem;
+  }
+  
+  .description,
+  .achievements {
+    padding: 1.2rem;
+    border-radius: 0.8rem;
+  }
+  
+  .description h4,
+  .achievements h4 {
+    font-size: 1.7rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .description li,
+  .achievements li {
+    font-size: 1.5rem;
+    margin-bottom: 0.7rem;
+    padding-left: 1.5rem;
+  }
+  
+  .timelineNode {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  
+  .timelineNode::before {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .education {
+    padding: 6rem 1vw 2rem;
+  }
+  
+  .heading {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .educationContainer {
+    padding: 0.5rem 0;
+  }
+  
+  .educationCard {
+    padding: 0.8rem 0.5rem 0.8rem 3rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .cardContent {
+    padding: 1.2rem;
+    border-radius: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .cardHeader {
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+  }
+  
+  .degree {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+  }
+  
+  .institutionInfo {
+    gap: 0.4rem;
+  }
+  
+  .institution,
+  .duration,
+  .location,
+  .grade {
+    font-size: 0.9rem;
+    padding: 0.2rem 0;
+    gap: 0.5rem;
+  }
+  
+  .icon {
+    font-size: 1rem;
+    min-width: 1rem;
+  }
+  
+  .cardBody {
+    gap: 1rem;
+  }
+  
+  .description,
+  .achievements {
+    padding: 1rem;
+    border-radius: 0.6rem;
+  }
+  
+  .description h4,
+  .achievements h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.6rem;
+  }
+  
+  .description li,
+  .achievements li {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+    line-height: 1.5;
+  }
+  
+  .timelineNode {
+    width: 1.4rem;
+    height: 1.4rem;
+    border-width: 3px;
+  }
+  
+  .timelineNode::before {
+    font-size: 0.5rem;
+  }
+}

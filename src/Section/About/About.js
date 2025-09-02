@@ -1,19 +1,34 @@
 import React from "react";
 import AboutImage from "../../Fixture/About.png";
 import style from "./About.module.css";
+import { useScrollAnimation } from "../../hooks/useScrollAnimation";
 
 export default function About() {
+  const [headingRef, isHeadingVisible] = useScrollAnimation(0.3);
+  const [contentRef, isContentVisible] = useScrollAnimation(0.2);
+  const [imageRef, isImageVisible] = useScrollAnimation(0.3);
+
   return (
     <div className={style.about} id="about">
-      <div className={style.img}>
+      <div
+        className={`${style.img} ${isImageVisible ? style.animate : ""}`}
+        ref={imageRef}
+      >
         <img src={AboutImage} alt="about-image" />
       </div>
-      <div className={style.content}>
-        <h2 className={style.heading}>
+      <div className={style.content} ref={contentRef}>
+        <h2
+          className={`${style.heading} ${
+            isHeadingVisible ? style.animate : ""
+          }`}
+          ref={headingRef}
+        >
           About<span> Me!</span>
         </h2>
-        <h3>Frontend Developer</h3>
-        <p>
+        <h3 className={isContentVisible ? style.animateRight : ""}>
+          Frontend Developer
+        </h3>
+        <p className={isContentVisible ? style.animateLeft : ""}>
           Hello! I'm a passionate developer with a diverse skill set and a love
           for problem-solving. Over the years, I’ve gained proficiency in
           various technologies, including HTML, CSS, TypeScript, JavaScript,
@@ -35,9 +50,15 @@ export default function About() {
           My intrests:-
         </p>
         <ul>
-          <li>Writing</li>
-          <li>Poetry</li>
-          <li>Riding Bikes</li>
+          <li className={isContentVisible ? style.animateBottom : ""}>
+            Writing
+          </li>
+          <li className={isContentVisible ? style.animateBottom : ""}>
+            Poetry
+          </li>
+          <li className={isContentVisible ? style.animateBottom : ""}>
+            Riding Bikes
+          </li>
         </ul>
       </div>
     </div>
