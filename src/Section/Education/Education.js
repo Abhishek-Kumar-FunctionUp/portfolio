@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import style from "./Education.module.css";
 import { BsBook, BsCalendar, BsGeoAlt, BsTrophy } from "react-icons/bs";
 import { educationData } from "../../Fixture/data";
@@ -8,8 +8,24 @@ export default function Education() {
   const [educationRef, isEducationVisible] = useScrollAnimation(0.2);
   const [headingRef, isHeadingVisible] = useScrollAnimation(0.3);
 
+  // Floating particles for education background
+  const educationParticles = useMemo(() => {
+    return Array.from({ length: 25 }, (_, index) => (
+      <div
+        key={index}
+        className={style.educationParticle}
+        style={{
+          left: `${Math.random() * 100}%`,
+          animationDelay: `${Math.random() * 12}s`,
+          animationDuration: `${8 + Math.random() * 8}s`,
+        }}
+      />
+    ));
+  }, []);
+
   return (
     <section className={style.education} id="education" ref={educationRef}>
+      {educationParticles}
       <h2
         className={`${style.heading} ${isHeadingVisible ? style.animate : ""}`}
         ref={headingRef}

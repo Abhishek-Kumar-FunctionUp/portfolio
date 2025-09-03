@@ -1,5 +1,6 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useMemo } from "react";
 import style from "./Home.module.css";
+import "./HomeParticles.css";
 import Resume from "../../Fixture/Resume_Abhishek.pdf";
 import Image from "../../Fixture/Home.svg";
 import {
@@ -10,12 +11,27 @@ import {
   BsCodeSlash,
   BsMusicNoteList,
 } from "react-icons/bs";
-import { FaGuitar } from "react-icons/fa";
+import { FaMotorcycle } from "react-icons/fa";
 import Typed from "typed.js";
 import { FaXTwitter } from "react-icons/fa6";
 
 export default function Home() {
   const el = useRef(null);
+
+  // Floating particles for home background
+  const homeParticles = useMemo(() => {
+    return Array.from({ length: 30 }, (_, index) => (
+      <div
+        key={index}
+        className="homeParticle"
+        style={{
+          left: `${Math.random() * 100}%`,
+          animationDelay: `${Math.random() * 10}s`,
+          animationDuration: `${6 + Math.random() * 8}s`,
+        }}
+      />
+    ));
+  }, []);
 
   useEffect(() => {
     let typed = new Typed(el.current, {
@@ -29,6 +45,25 @@ export default function Home() {
 
   return (
     <div className={style.home} id="home">
+      {homeParticles}
+      {/* Floating Particles */}
+      <div
+        className={style.floatingParticle}
+        style={{ top: "20%", left: "10%", animationDelay: "0s" }}
+      ></div>
+      <div
+        className={style.floatingParticle}
+        style={{ top: "60%", right: "15%", animationDelay: "2s" }}
+      ></div>
+      <div
+        className={style.floatingParticle}
+        style={{ bottom: "30%", left: "15%", animationDelay: "4s" }}
+      ></div>
+      <div
+        className={style.floatingParticle}
+        style={{ top: "40%", right: "25%", animationDelay: "6s" }}
+      ></div>
+
       <div className={style.homeContent}>
         <h3>Hello, It's Me</h3>
         <h1>Abhishek Kumar</h1>
@@ -83,15 +118,16 @@ export default function Home() {
         </a>
       </div>
       <div className={style.imgDp}>
-        <img src={Image} />
+        <img src={Image} alt="Abhishek Kumar" />
+        <div className={style.imageGlow}></div>
       </div>
       <div className={style.intrest_container}>
         <div className={style.intrest_box}>
           <div className={style.intrest1}>
             <i>
-              <FaGuitar />
+              <FaMotorcycle />
             </i>
-            <h3>Intrests</h3>
+            <h3>Bike Riding</h3>
           </div>
           <div className={style.intrest2}>
             <i>

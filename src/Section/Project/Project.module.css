@@ -3,10 +3,52 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--second-bg-color);
+  background: linear-gradient(135deg, var(--second-bg-color) 0%, #2a3441 50%, var(--second-bg-color) 100%);
   padding-left: 10rem;
   padding-right: 10rem;
   padding-bottom: 10rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.project::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 20%, rgba(14, 239, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(14, 239, 255, 0.05) 0%, transparent 50%);
+  animation: backgroundPulse 10s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.project::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(45deg, rgba(14, 239, 255, 0.02) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(14, 239, 255, 0.02) 25%, transparent 25%);
+  background-size: 50px 50px;
+  animation: patternMove 20s linear infinite;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+@keyframes backgroundPulse {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+@keyframes patternMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
 }
 
 .heading {
@@ -16,6 +58,37 @@
   opacity: 0;
   transform: translateY(-100px);
   transition: all 1s ease;
+  background: linear-gradient(45deg, var(--main-color), #00ff88, var(--main-color));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(14, 239, 255, 0.3));
+  position: relative;
+}
+
+.heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--main-color), transparent);
+  border-radius: 2px;
+  animation: lineGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes lineGlow {
+  0% { box-shadow: 0 0 5px var(--main-color); }
+  100% { box-shadow: 0 0 20px var(--main-color), 0 0 30px var(--main-color); }
 }
 
 .heading.animate {
@@ -38,31 +111,61 @@
 .box {
   position: relative;
   border-radius: 2rem;
-  box-shadow: 0 0 1rem var(--bg-color);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(14, 239, 255, 0.2);
   overflow: hidden;
   display: flex;
   opacity: 0;
-  transform: scale(0);
-  transition: all 1s ease;
+  transform: scale(0.8) translateY(50px);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: rgba(50, 57, 70, 0.8);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(14, 239, 255, 0.1);
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(14, 239, 255, 0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.box:hover::before {
+  opacity: 1;
 }
 
 .box.animateBox {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1) translateY(0);
 }
 
-.box.animateBox:hover {
-  animation: floatImage 4s ease-in-out infinite;
+.box:hover {
+  transform: scale(1.05) translateY(-15px);
+  border-color: var(--main-color);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(14, 239, 255, 0.4),
+    0 0 40px rgba(14, 239, 255, 0.3);
 }
 
 .box img {
   width: 100%;
   height: 30vh;
-  transition: .5s ease;
+  transition: all 0.5s ease;
+  filter: brightness(0.8);
 }
 
 .box:hover img {
   transform: scale(1.1);
+  filter: brightness(1.1);
 }
 
 .box .layer {
@@ -71,14 +174,19 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, .1), var(--main-color));
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.1), 
+    rgba(14, 239, 255, 0.9)
+  );
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
   transform: translateY(100%);
-  transition: .5s ease;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(10px);
+  z-index: 2;
 }
 
 .box:hover .layer {
@@ -87,13 +195,25 @@
 
 .layer h4 {
   font-size: 3rem;
+  color: var(--text-color);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% { text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+  100% { text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 255, 255, 0.3); }
 }
 
 .layer p {
   font-family: 'Mosk', sans-serif;
   font-size: 1.6rem;
-  margin: .3rem 0 1rem;
+  margin: 0.3rem 0 2rem;
   padding: 0vw 1vw 0vw 1vw;
+  color: var(--text-color);
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 .layer a {
@@ -102,13 +222,75 @@
   align-items: center;
   width: 5rem;
   height: 5rem;
-  background: var(--text-color);
+  background: var(--bg-color);
   border-radius: 50%;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.layer a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.layer a:hover::before {
+  left: 100%;
+}
+
+.layer a:hover {
+  transform: scale(1.2) rotate(360deg);
+  border-color: var(--text-color);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 .logo {
   font-size: 2rem;
-  color: var(--second-bg-color);
+  color: var(--main-color);
+  transition: all 0.3s ease;
+}
+
+.layer a:hover .logo {
+  color: var(--main-color);
+  filter: drop-shadow(0 0 10px var(--main-color));
+}
+
+/* Floating Particles for Projects */
+.projectParticle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--main-color);
+  border-radius: 50%;
+  animation: projectParticleFloat 10s ease-in-out infinite;
+  box-shadow: 0 0 12px var(--main-color);
+  z-index: 1;
+}
+
+@keyframes projectParticleFloat {
+  0%, 100% {
+    opacity: 0.3;
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+  25% {
+    opacity: 0.7;
+    transform: translateY(-50px) scale(1.2) rotate(90deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-100px) scale(1.5) rotate(180deg);
+  }
+  75% {
+    opacity: 0.7;
+    transform: translateY(-50px) scale(1.2) rotate(270deg);
+  }
 }
 
 @keyframes floatImage {

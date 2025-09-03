@@ -226,6 +226,14 @@ export const experiences = [
     position: "Software Engineer",
     duration: "Nov. 2024 - Present",
     location: "Vadodara, Gujarat, India",
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "Redux",
+      "JavaScript",
+    ],
     description: [
       "Developed responsive web applications using Next.js and tailwind CSS",
       "Collaborated with cross-functional teams to deliver high-quality user interfaces",
@@ -239,6 +247,7 @@ export const experiences = [
     position: "Frontend Developer",
     duration: "Sept. 2023 - Sept. 2024",
     location: "Nadiad, Gujarat, India",
+    techStack: ["React", "JavaScript", "TypeScript", "CSS3", "Tailwind", "Git"],
     description: [
       "Built interactive websites using React JS and modern CSS frameworks",
       "Worked on mobile-first responsive design principles",
@@ -252,6 +261,7 @@ export const experiences = [
     position: "Frontend Developer Trainee",
     duration: "Nov. 2022 - Aug. 2023",
     location: "Remote",
+    techStack: ["HTML5", "CSS3", "JavaScript", "React", "TypeScript"],
     description: [
       "Built multiple projects using HTML5, CSS3, JavaScript, and React.js under mentor guidance",
       "Gained hands-on experience with version control systems (Git/GitHub) and collaborative development",

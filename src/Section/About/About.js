@@ -10,6 +10,90 @@ export default function About() {
 
   return (
     <div className={style.about} id="about">
+      {/* Bike Animation Elements */}
+      <div className={style.bikeContainer}>
+        <div className={style.bike}>🏍️</div>
+        <div className={style.tireTracks}></div>
+      </div>
+
+      {/* Racing Stripes */}
+      <div className={style.racingStripes}>
+        <div className={style.stripe}></div>
+        <div className={style.stripe}></div>
+        <div className={style.stripe}></div>
+      </div>
+
+      {/* Speed Lines */}
+      <div className={style.speedLines}>
+        <div className={style.speedLine}></div>
+        <div className={style.speedLine}></div>
+        <div className={style.speedLine}></div>
+        <div className={style.speedLine}></div>
+        <div className={style.speedLine}></div>
+      </div>
+
+      {/* Floating Particles */}
+      <div
+        className={style.aboutParticle}
+        style={{ top: "15%", left: "5%", animationDelay: "0s" }}
+      ></div>
+      <div
+        className={style.aboutParticle}
+        style={{ top: "75%", right: "10%", animationDelay: "4s" }}
+      ></div>
+      <div
+        className={style.aboutParticle}
+        style={{ bottom: "25%", left: "12%", animationDelay: "8s" }}
+      ></div>
+      <div
+        className={style.aboutParticle}
+        style={{ top: "45%", left: "2%", animationDelay: "2s" }}
+      ></div>
+      <div
+        className={style.aboutParticle}
+        style={{ top: "25%", right: "5%", animationDelay: "6s" }}
+      ></div>
+      <div
+        className={style.aboutParticle}
+        style={{ bottom: "50%", left: "25%", animationDelay: "10s" }}
+      ></div>
+      <div
+        className={style.aboutParticle}
+        style={{ top: "85%", left: "35%", animationDelay: "1s" }}
+      ></div>
+      <div
+        className={style.aboutParticle}
+        style={{ top: "10%", right: "25%", animationDelay: "5s" }}
+      ></div>
+      <div
+        className={style.aboutParticle}
+        style={{ bottom: "15%", right: "35%", animationDelay: "9s" }}
+      ></div>
+      <div
+        className={style.aboutParticle}
+        style={{ top: "60%", left: "45%", animationDelay: "3s" }}
+      ></div>
+      <div
+        className={style.aboutParticle}
+        style={{ top: "35%", right: "45%", animationDelay: "7s" }}
+      ></div>
+      <div
+        className={style.aboutParticle}
+        style={{ bottom: "40%", right: "15%", animationDelay: "11s" }}
+      ></div>
+      <div
+        className={style.aboutParticle}
+        style={{ top: "5%", left: "70%", animationDelay: "0.5s" }}
+      ></div>
+      <div
+        className={style.aboutParticle}
+        style={{ bottom: "10%", left: "60%", animationDelay: "4.5s" }}
+      ></div>
+      <div
+        className={style.aboutParticle}
+        style={{ top: "90%", right: "20%", animationDelay: "8.5s" }}
+      ></div>
+
       <div
         className={`${style.img} ${isImageVisible ? style.animate : ""}`}
         ref={imageRef}
@@ -51,13 +135,18 @@ export default function About() {
         </p>
         <ul>
           <li className={isContentVisible ? style.animateBottom : ""}>
-            Writing
+            ✍️ Writing
           </li>
           <li className={isContentVisible ? style.animateBottom : ""}>
-            Poetry
+            📝 Poetry
           </li>
-          <li className={isContentVisible ? style.animateBottom : ""}>
-            Riding Bikes
+          <li
+            className={`${isContentVisible ? style.animateBottom : ""} ${
+              style.bikeInterest
+            }`}
+          >
+            🏍️ Riding Bikes
+            <div className={style.miniSpeedometer}></div>
           </li>
         </ul>
       </div>

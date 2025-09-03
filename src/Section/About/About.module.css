@@ -3,20 +3,91 @@
   justify-content: center;
   align-items: center;
   gap: 10rem;
-  background: var(--second-bg-color);
+  background: linear-gradient(135deg, var(--second-bg-color) 0%, #2a3441 50%, var(--second-bg-color) 100%);
   height: 100vh;
   padding-left: 5vw;
   padding-right: 5vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(14, 239, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(14, 239, 255, 0.05) 0%, transparent 50%);
+  animation: backgroundPulse 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.about::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(45deg, rgba(14, 239, 255, 0.02) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(14, 239, 255, 0.02) 25%, transparent 25%);
+  background-size: 40px 40px;
+  animation: patternMove 15s linear infinite;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+@keyframes backgroundPulse {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+@keyframes patternMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 40px; }
 }
 
 .heading {
-  text-align: center;
   font-size: 3rem;
   text-align: left;
   line-height: 1.2;
   opacity: 0;
   transform: translateY(-100px);
   transition: all 1s ease;
+  background: linear-gradient(45deg, var(--main-color), #00ff88, var(--main-color));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(14, 239, 255, 0.3));
+  position: relative;
+}
+
+.heading::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--main-color), transparent);
+  border-radius: 2px;
+  animation: lineGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes lineGlow {
+  0% { box-shadow: 0 0 5px var(--main-color); }
+  100% { box-shadow: 0 0 15px var(--main-color), 0 0 25px var(--main-color); }
 }
 
 .heading.animate {
@@ -31,6 +102,23 @@
   opacity: 0;
   transform: translateX(100px);
   transition: all 1s ease 0.2s;
+  background: linear-gradient(45deg, var(--main-color), #00ff88);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.content h3::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--main-color);
+  transition: width 0.5s ease;
+  border-radius: 1px;
 }
 
 .content h3.animateRight {
@@ -38,28 +126,27 @@
   transform: translateX(0);
 }
 
-.img {
-  border-bottom: 1px solid var(--main-color);
-  opacity: 0;
-  transform: scale(0);
-  transition: all 1s ease 0.1s;
-}
-
-.img.animate {
-  opacity: 1;
-  transform: scale(1);
-  animation: floatImage 4s ease-in-out infinite 2s;
+.content h3.animateRight::after {
+  width: 100%;
 }
 
 .content p {
   font-size: 1.6rem;
   font-family: 'Mosk', sans-serif;
-  line-height: 4vh;
+  line-height: 1.8;
   width: 40vw;
   margin: 2rem 0 2rem;
   opacity: 0;
   transform: translateX(-100px);
   transition: all 1s ease 0.3s;
+  text-align: justify;
+  position: relative;
+  padding: 2rem;
+  background: rgba(50, 57, 70, 0.3);
+  border-left: 4px solid var(--main-color);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .content p.animateLeft {
@@ -67,18 +154,319 @@
   transform: translateX(0);
 }
 
+.content ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
 .content li {
   font-size: 15px;
   font-family: 'Segoe Script', 'Lucida Handwriting', cursive;
-  line-height: 4vh;
   opacity: 0;
   transform: translateY(100px);
   transition: all 1s ease;
+  background: rgba(14, 239, 255, 0.1);
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  border: 2px solid rgba(14, 239, 255, 0.3);
+  color: var(--main-color);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.content li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(14, 239, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.content li:hover::before {
+  left: 100%;
+}
+
+.content li:hover {
+  border-color: var(--main-color);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(14, 239, 255, 0.3);
 }
 
 .content li.animateBottom {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Floating Particles for About */
+.aboutParticle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--main-color);
+  border-radius: 50%;
+  animation: aboutParticleFloat 12s ease-in-out infinite;
+  box-shadow: 0 0 20px var(--main-color);
+  z-index: 1;
+}
+
+/* Bike Animation Effects */
+.bikeContainer {
+  position: absolute;
+  top: 20%;
+  left: -100px;
+  width: 100%;
+  height: 60px;
+  z-index: 2;
+  animation: bikeRide 15s linear infinite;
+}
+
+.bike {
+  font-size: 3rem;
+  position: absolute;
+  animation: bikeBounce 0.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(14, 239, 255, 0.5));
+  transform: scaleX(-1);
+}
+
+.tireTracks {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 200px;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0px,
+    var(--main-color) 5px,
+    var(--main-color) 15px,
+    transparent 20px
+  );
+  opacity: 0.6;
+  animation: trackFade 2s ease-out;
+}
+
+.racingStripes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.stripe {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(14, 239, 255, 0.3) 50%,
+    transparent 100%
+  );
+  animation: raceStripe 3s linear infinite;
+}
+
+.stripe:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.stripe:nth-child(2) {
+  left: 30%;
+  animation-delay: 1s;
+}
+
+.stripe:nth-child(3) {
+  left: 70%;
+  animation-delay: 2s;
+}
+
+.speedLines {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 150px;
+  height: 100px;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.speedLine {
+  position: absolute;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(14, 239, 255, 0.7) 50%,
+    transparent 100%
+  );
+  animation: speedLineMove 1.5s ease-out infinite;
+}
+
+.speedLine:nth-child(1) {
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.speedLine:nth-child(2) {
+  top: 35%;
+  animation-delay: 0.3s;
+}
+
+.speedLine:nth-child(3) {
+  top: 50%;
+  animation-delay: 0.6s;
+}
+
+.speedLine:nth-child(4) {
+  top: 65%;
+  animation-delay: 0.9s;
+}
+
+.speedLine:nth-child(5) {
+  top: 80%;
+  animation-delay: 1.2s;
+}
+
+.bikeInterest {
+  position: relative;
+  overflow: visible !important;
+}
+
+.miniSpeedometer {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--main-color);
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--main-color) 30%, transparent 40%);
+  animation: speedometerPulse 2s ease-in-out infinite;
+}
+
+.miniSpeedometer::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 2px;
+  background: var(--main-color);
+  transform-origin: left center;
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: needleRotate 3s ease-in-out infinite;
+}
+
+/* Bike Animation Keyframes */
+@keyframes bikeRide {
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: calc(100% + 100px);
+  }
+}
+
+@keyframes bikeBounce {
+  0%, 100% {
+    transform: scaleX(-1) translateY(0px);
+  }
+  50% {
+    transform: scaleX(-1) translateY(-8px);
+  }
+}
+
+@keyframes trackFade {
+  0% {
+    opacity: 0.8;
+    width: 0px;
+  }
+  100% {
+    opacity: 0;
+    width: 200px;
+  }
+}
+
+@keyframes raceStripe {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+@keyframes speedLineMove {
+  0% {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+}
+
+@keyframes speedometerPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--main-color);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 15px var(--main-color), 0 0 25px var(--main-color);
+    transform: scale(1.2);
+  }
+}
+
+@keyframes needleRotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(135deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}
+
+@keyframes aboutParticleFloat {
+  0%, 100% {
+    opacity: 0.2;
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+  25% {
+    opacity: 0.6;
+    transform: translateY(-60px) scale(1.3) rotate(90deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-120px) scale(1.6) rotate(180deg);
+  }
+  75% {
+    opacity: 0.6;
+    transform: translateY(-60px) scale(1.3) rotate(270deg);
+  }
 }
 
 @keyframes floatImage {
@@ -167,6 +555,30 @@
     box-sizing: border-box;
   }
 
+  /* Adjust bike animations for mobile */
+  .bikeContainer {
+    top: 10%;
+    animation-duration: 12s;
+  }
+
+  .bike {
+    font-size: 2rem;
+    transform: scaleX(-1); /* Maintain right-facing direction on tablet */
+  }
+
+  .speedLines {
+    width: 80px;
+    height: 60px;
+  }
+
+  .speedLine {
+    width: 40px;
+  }
+
+  .racingStripes .stripe {
+    animation-duration: 4s;
+  }
+
   .img {
     width: 60vw;
     max-width: 350px;
@@ -191,7 +603,7 @@
     font-size: 2.2rem;
     text-align: center;
     margin-bottom: 1rem;
-    font-family: 'Mosk', sans-serif;;
+    font-family: 'Mosk', sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
   }
@@ -212,7 +624,7 @@
     margin: 1rem auto;
     text-align: center;
     padding: 0 0.5rem;
-    font-family: 'Mosk', sans-serif;;
+    font-family: 'Mosk', sans-serif;
     color: var(--text-color);
     line-height: 1.7;
   }
@@ -244,6 +656,30 @@
     box-sizing: border-box;
   }
 
+  /* Further adjust bike animations for small mobile */
+  .bikeContainer {
+    top: 5%;
+    animation-duration: 10s;
+  }
+
+  .bike {
+    font-size: 1.5rem;
+    transform: scaleX(-1); /* Maintain right-facing direction on mobile */
+  }
+
+  .speedLines {
+    display: none; /* Hide speed lines on very small screens */
+  }
+
+  .racingStripes .stripe {
+    animation-duration: 5s;
+  }
+
+  .miniSpeedometer {
+    width: 15px;
+    height: 15px;
+  }
+
   .content{
     padding: 0rem 0rem 5rem 0rem;
   }
@@ -272,7 +708,7 @@
     font-size: 1.7rem;
     text-align: center;
     margin-bottom: 0.5rem;
-    font-family: 'Mosk', sans-serif;;
+    font-family: 'Mosk', sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
   }
@@ -291,14 +727,14 @@
     font-size: 1.3rem;
     margin: 0.5rem auto;
     text-align: center;
-    padding: 0 0.5rem;
-    font-family: 'Mosk', sans-serif;;
+    padding: 1rem 0.5rem;
+    font-family: 'Mosk', sans-serif;
     color: var(--text-color);
     line-height: 1.7;
   }
 
   .content ul {
-    padding-left: 0;
+    padding: 0 1.5rem;
     text-align: center;
     list-style: none;
   }
