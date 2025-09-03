@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import style from "./Contact.module.css";
+
 const ContactForm = ({ isVisible }) => {
   const {
     register,
@@ -31,28 +32,32 @@ const ContactForm = ({ isVisible }) => {
     // Destructure data object
     const { name, email, subject, message } = data;
 
+    // Hardcoded values for testing (replace with your actual values)
+    const SERVICE_ID = "service_f3oalqk";
+    const TEMPLATE_ID = "template_fyl752n";
+    const USER_ID = "p8Nl8yPGUAxmtQ-3v";
+
     try {
       // Disable form while processing submission
       setDisabled(true);
 
-      // Initialize EmailJS with public key
-      emailjs.init("p8Nl8yPGUAxmtQ-3v");
-
-      // Simplified template params - use standard names
       const templateParams = {
         from_name: name,
         from_email: email,
+        to_name: "Abhishek Kumar",
         subject: subject,
         message: message,
         reply_to: email,
       };
 
-      console.log("Sending email with template params:", templateParams);
+      console.log("Sending email with params:", templateParams);
 
-      // Use the send method after initialization
+      // Initialize EmailJS
+      emailjs.init(USER_ID);
+
       const result = await emailjs.send(
-        "service_rep00sj",
-        "template_fyl752n",
+        SERVICE_ID,
+        TEMPLATE_ID,
         templateParams
       );
 
@@ -62,21 +67,12 @@ const ContactForm = ({ isVisible }) => {
         "success"
       );
     } catch (e) {
-      console.error("EmailJS Error Details:", e);
-      console.error("Error status:", e.status);
-      console.error("Error text:", e.text);
-      console.error("Full error object:", JSON.stringify(e, null, 2));
+      console.error("EmailJS Error:", e);
 
       let errorMessage =
         "Something went wrong. Please try again or contact me directly.";
 
-      if (e.text && e.text.includes("insufficient authentication scopes")) {
-        errorMessage =
-          "Gmail authentication issue. Please reconfigure your EmailJS service with proper Gmail permissions.";
-      } else if (e.status === 412) {
-        errorMessage =
-          "Template configuration error. Please update your EmailJS template to use these variables: {{from_name}}, {{from_email}}, {{subject}}, {{message}}, {{reply_to}}";
-      } else if (e.status === 400) {
+      if (e.status === 400) {
         errorMessage = "Bad Request - Please check the form data.";
       } else if (e.status === 401) {
         errorMessage = "Unauthorized - Email service authentication failed.";
@@ -140,7 +136,7 @@ const ContactForm = ({ isVisible }) => {
                       {...register("email", {
                         required: true,
                         pattern:
-                          /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                       })}
                       className={style.input}
                       placeholder="Email address"
@@ -218,7 +214,7 @@ const ContactForm = ({ isVisible }) => {
             aria-label="Close"
             onClick={() =>
               setAlertInfo({ display: false, message: "", type: "" })
-            } // Clear the alert when close button is clicked
+            }
           ></button>
         </div>
       )}
