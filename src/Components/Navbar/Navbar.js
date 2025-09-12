@@ -167,16 +167,16 @@ export default function Navbar() {
                 Skills
               </a>
               <a
-                href="#education"
-                onClick={(e) => handleNavClick(e, "#education")}
-              >
-                Education
-              </a>
-              <a
                 href="#experience"
                 onClick={(e) => handleNavClick(e, "#experience")}
               >
                 Experience
+              </a>
+              <a
+                href="#education"
+                onClick={(e) => handleNavClick(e, "#education")}
+              >
+                Education
               </a>
               <a
                 href="#projects"

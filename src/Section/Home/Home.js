@@ -108,14 +108,27 @@ export default function Home() {
             <BsLinkedin className={style.icon} />
           </a>
         </div>
-        <a
-          href={Resume}
-          download="Abhishek Kumar"
-          target="_blank"
-          className={style.btn}
-        >
-          Download CV
-        </a>
+        <div className={style.actionBtns}>
+          <a
+            href={Resume}
+            download="Abhishek Kumar"
+            target="_blank"
+            className={style.btn}
+          >
+            📄 Download CV
+          </a>
+          <button
+            className={style.btn}
+            onClick={() => {
+              const contactSection = document.getElementById("contact");
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
+            🚀 Hire Me
+          </button>
+        </div>
       </div>
       <div className={style.imgDp}>
         <img src={Image} alt="Abhishek Kumar" />
