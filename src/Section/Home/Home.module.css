@@ -1,3 +1,35 @@
+@media (max-width: 600px) {
+  .home::before,
+  .home::after {
+    animation: none !important;
+    opacity: 0.05 !important;
+    background: none !important;
+  }
+  .homeContent h1 {
+    animation: none !important;
+    filter: none !important;
+  }
+  .homeContent h3,
+  .homeContent h3:nth-of-type(2) {
+    animation: none !important;
+  }
+}
+@media (max-width: 900px) {
+  .home::before,
+  .home::after {
+    animation: none !important;
+    opacity: 0.1 !important;
+    background: none !important;
+  }
+  .homeContent h1 {
+    animation: none !important;
+    filter: none !important;
+  }
+  .homeContent h3,
+  .homeContent h3:nth-of-type(2) {
+    animation: none !important;
+  }
+}
 
 .actionBtns {
   display: flex;
