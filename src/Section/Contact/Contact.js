@@ -13,7 +13,7 @@ export default function Contact() {
 
   // Floating particles for contact background
   const contactParticles = useMemo(() => {
-    return Array.from({ length: 35 }, (_, index) => (
+    return Array.from({ length: 35 }, (_, index) =>
       <div
         key={index}
         className={style.contactParticle}
@@ -23,7 +23,7 @@ export default function Contact() {
           animationDuration: `${10 + Math.random() * 10}s`,
         }}
       />
-    ));
+    );
   }, []);
 
   return (
@@ -81,7 +81,7 @@ export default function Contact() {
           </i>
         </a>
         <a
-          href="https://www.linkedin.com/in/abhishek-kumar-586b67143/"
+          href="https://www.linkedin.com/in/abhishek-kumar-vishwakarma-586b67143"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Visit LinkedIn profile"

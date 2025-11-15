@@ -98,13 +98,22 @@ export const projectData = [
   {
     id: 1,
     imgLink:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPY73iw6wXigOKpMborGQtYIuXgFdYCS0ANg&s",
+    name: "ePost",
+    detail:
+      "ePost.ch is a digital mailbox service from Swiss Post",
+    projectLink: "https://www.epost.ch",
+  },
+  {
+    id: 2,
+    imgLink:
       "https://images.ctfassets.net/4v7glkww2pji/22CVefUFGWmv733IdTxbJe/34f433cc461397bcef808fb0037e1a07/735x418_container_vessel.jpg",
     name: "Oceanaut",
     detail: "This project is a vessel management and live location site",
     projectLink: "https://oceanaut.ca",
   },
   {
-    id: 2,
+    id: 3,
     imgLink:
       " https://c4.wallpaperflare.com/wallpaper/362/691/614/golf-sports-sport-gloves-wallpaper-preview.jpg",
     name: "GOATT Golf",
@@ -112,7 +121,7 @@ export const projectData = [
     projectLink: "https://goatt.golf/",
   },
   {
-    id: 3,
+    id: 4,
     imgLink:
       "https://us.123rf.com/450wm/khaosai/khaosai2202/khaosai220200012/181366240-man-hand-touching-virtual-screen-to-lms-learning-management-system-web-icon-for-lesson-and-online.jpg?ver=6",
     name: "LMS",
@@ -121,7 +130,7 @@ export const projectData = [
     projectLink: "https://illustrious-marigold-5b273f.netlify.app/",
   },
   {
-    id: 4,
+    id: 5,
     imgLink:
       "https://c1.wallpaperflare.com/preview/435/683/594/business-close-up-code-coding.jpg",
     name: "Text Editor",
@@ -130,7 +139,7 @@ export const projectData = [
     projectLink: "https://frolicking-conkies-61c311.netlify.app/",
   },
   {
-    id: 5,
+    id: 6,
     imgLink:
       "https://dustinstout.com/wp-content/uploads/2021/05/twitter-image-sizes-1200x628-1.jpg",
     name: "Social Media",
@@ -138,7 +147,7 @@ export const projectData = [
     projectLink: "https://luminous-toffee-7c3ea2.netlify.app",
   },
   {
-    id: 6,
+    id: 7,
     imgLink:
       "https://i0.wp.com/www.bakerlabels.co.uk/wp-content/uploads/2022/05/CARMEL_JANE_BAKER_NOV21-3986-2.jpg?resize=1080%2C675&ssl=1",
     name: "GYM Site",
@@ -146,7 +155,7 @@ export const projectData = [
     projectLink: "https://neon-lamington-83f9af.netlify.app/",
   },
   {
-    id: 7,
+    id: 8,
     imgLink:
       "https://i1.pickpik.com/photos/8/991/651/cloudy-autumn-weather-stormy-rainy-preview.jpg",
     name: "Weather App",
@@ -154,7 +163,7 @@ export const projectData = [
     projectLink: "https://radiant-kleicha-545200.netlify.app/",
   },
   {
-    id: 8,
+    id: 9,
     imgLink:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJtZHXaMXRU1lCzWVgPsw69lDVm7SmX9z4Qw&usqp=CAU",
     name: "NPM Package",

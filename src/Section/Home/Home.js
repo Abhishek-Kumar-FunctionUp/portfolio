@@ -20,7 +20,7 @@ export default function Home() {
 
   // Floating particles for home background
   const homeParticles = useMemo(() => {
-    return Array.from({ length: 30 }, (_, index) => (
+    return Array.from({ length: 30 }, (_, index) =>
       <div
         key={index}
         className="homeParticle"
@@ -30,7 +30,7 @@ export default function Home() {
           animationDuration: `${6 + Math.random() * 8}s`,
         }}
       />
-    ));
+    );
   }, []);
 
   useEffect(() => {
@@ -50,19 +50,19 @@ export default function Home() {
       <div
         className={style.floatingParticle}
         style={{ top: "20%", left: "10%", animationDelay: "0s" }}
-      ></div>
+      />
       <div
         className={style.floatingParticle}
         style={{ top: "60%", right: "15%", animationDelay: "2s" }}
-      ></div>
+      />
       <div
         className={style.floatingParticle}
         style={{ bottom: "30%", left: "15%", animationDelay: "4s" }}
-      ></div>
+      />
       <div
         className={style.floatingParticle}
         style={{ top: "40%", right: "25%", animationDelay: "6s" }}
-      ></div>
+      />
 
       <div className={style.homeContent}>
         <h3>Hello, It's Me</h3>
@@ -101,7 +101,7 @@ export default function Home() {
             <BsInstagram className={style.icon} />
           </a>
           <a
-            href="https://www.linkedin.com/in/abhishek-kumar-586b67143/"
+            href="https://www.linkedin.com/in/abhishek-kumar-vishwakarma-586b67143"
             target="_blank"
             className={style.socialFour}
           >
@@ -132,7 +132,7 @@ export default function Home() {
       </div>
       <div className={style.imgDp}>
         <img src={Image} alt="Abhishek Kumar" />
-        <div className={style.imageGlow}></div>
+        <div className={style.imageGlow} />
       </div>
       <div className={style.intrest_container}>
         <div className={style.intrest_box}>
